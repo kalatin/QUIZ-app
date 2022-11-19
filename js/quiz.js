@@ -6,6 +6,7 @@ class Quiz {
 
 		this.indicator = document.querySelector('.quiz__indicator');
 		this.info = document.querySelector('.quiz__question');
+		this.image = document.querySelector('img');
 		this.list = document.querySelector('.quiz__list');
 		this.button = document.querySelector('.quiz__button > button');
 	};
@@ -21,7 +22,7 @@ class Quiz {
 			//Очистка листа
 			this.list.innerHTML = '';
 			//Кнопка ещё раз
-			this.button.textContent = `Ещё раз`;
+			this.button.outerHTML = `<button onclick = "location.reload()">Пройти ещё раз</button>`;
 		} 
 		//Если нет
 		else {
@@ -79,4 +80,4 @@ class Quiz {
 
 let ex1 = new Quiz (survey_1);
 
-ex1.render()
+ex1.render();
