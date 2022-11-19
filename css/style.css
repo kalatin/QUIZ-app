@@ -113,6 +113,9 @@ body {
     padding: 10px 20px;
   }
 }
+.quiz__wrapper img {
+  max-height: 250px;
+}
 .quiz__block {
   display: flex;
   flex-direction: column;

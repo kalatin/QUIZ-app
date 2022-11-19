@@ -14,11 +14,12 @@ class Quiz {
 	render () {
 		//Если это последний вопрос
 		if(this.currentQuestion == this.survey.length){
-			console.log('Вы в последнем');
 			//Индикатор
 			this.indicator.textContent = `Тест завершен`;
 			//Сколько ответов
 			this.info.textContent = `Вы ответили правильно на ${this.score} из ${this.survey.length} вопросов`;
+			//Картинка убрать
+			this.image.src = '';
 			//Очистка листа
 			this.list.innerHTML = '';
 			//Кнопка ещё раз
@@ -26,11 +27,13 @@ class Quiz {
 		} 
 		//Если нет
 		else {
-			console.log('Не последний');
 			//Индикатор
 			this.indicator.textContent = `${this.currentQuestion + 1}/${this.survey.length}`;
 			//Вопрос
 			this.info.textContent = this.survey[this.currentQuestion].question;
+
+			//Картинка
+			this.image.src = `../image/${this.survey[this.currentQuestion].image}`;
 			//Ответы
 			for (let i = 0; i < this.survey[this.currentQuestion].answers.length; i++) {
 				let option = document.createElement('div');
