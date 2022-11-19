@@ -112,13 +112,16 @@ body {
 	&__wrapper {
 		background: white;
 		padding: 20px 30px;
-		max-width: 60%;
+		width: 30%;
+		@media (max-width:1650px) {
+			width: 50%;
+		}
 		@media(max-width:1200px) {
+			width: 60%;
 			padding: 15px 25px;
-			max-width: 80%;
 		}
 		@media(max-width:900px) {
-			max-width: 90%;
+			width: 90%;
 			padding: 10px 20px;
 		}
 	}

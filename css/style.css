@@ -94,17 +94,22 @@ body {
 .quiz__wrapper {
   background: white;
   padding: 20px 30px;
-  max-width: 60%;
+  width: 30%;
+}
+@media (max-width: 1650px) {
+  .quiz__wrapper {
+    width: 50%;
+  }
 }
 @media (max-width: 1200px) {
   .quiz__wrapper {
+    width: 60%;
     padding: 15px 25px;
-    max-width: 80%;
   }
 }
 @media (max-width: 900px) {
   .quiz__wrapper {
-    max-width: 90%;
+    width: 90%;
     padding: 10px 20px;
   }
 }
