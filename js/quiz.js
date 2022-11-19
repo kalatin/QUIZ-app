@@ -2,7 +2,7 @@ class Quiz {
 	constructor (survey) {
 		this.survey = survey;
 		this.score = 0;
-		this.currentQuestion = 3;
+		this.currentQuestion = 0;
 
 		this.indicator = document.querySelector('.quiz__indicator');
 		this.info = document.querySelector('.quiz__question');
@@ -13,6 +13,7 @@ class Quiz {
 	render () {
 		//Если это последний вопрос
 		if(this.currentQuestion == this.survey.length){
+			console.log('Вы в последнем');
 			//Индикатор
 			this.indicator.textContent = `Тест завершен`;
 			//Сколько ответов
@@ -24,6 +25,7 @@ class Quiz {
 		} 
 		//Если нет
 		else {
+			console.log('Не последний');
 			//Индикатор
 			this.indicator.textContent = `${this.currentQuestion + 1}/${this.survey.length}`;
 			//Вопрос
@@ -48,6 +50,29 @@ class Quiz {
 			})
 			//Кнопка
 			this.button.textContent = 'Ответить';
+			this.button.addEventListener('click',() => {
+				this.checkQuestion() 
+			})
+		}
+		
+	};
+	checkQuestion () {
+		//Выбран ли ответ
+		let checkAns = this.list.querySelector('input[type="radio"]:checked');
+		//Не выбран
+		if(!checkAns) {
+			return
+		}
+		//Выбран
+		else {
+			//Проверяем правильный ли ответ
+			if(checkAns.value == this.survey[this.currentQuestion].correct) {
+				this.score++;
+			}
+			//Переходим к следующему вопросу
+			this.list.textContent = '';
+			this.currentQuestion += 1;
+			this.render()
 		}
 	}
 }
