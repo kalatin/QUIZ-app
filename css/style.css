@@ -87,9 +87,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: rgb(238, 238, 238);
-  background-image: url("../image/17580.jpg");
-  background-size: 100% 100%;
+  background: rgb(238, 238, 238) url("../image/17580.jpg") 100% 100%;
 }
 .quiz__wrapper {
   background: white;
@@ -104,13 +102,12 @@ body {
 @media (max-width: 1200px) {
   .quiz__wrapper {
     width: 60%;
-    padding: 15px 25px;
+    padding: 10px 20px;
   }
 }
 @media (max-width: 900px) {
   .quiz__wrapper {
     width: 90%;
-    padding: 10px 20px;
   }
 }
 .quiz__wrapper img {
@@ -119,12 +116,7 @@ body {
 .quiz__block {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
-}
-@media (max-width: 1200px) {
-  .quiz__block {
-    row-gap: 10px;
-  }
+  row-gap: 10px;
 }
 .quiz__indicator {
   text-align: center;
@@ -170,11 +162,6 @@ body {
   font-size: 17px;
   padding: 10px 10px;
 }
-@media (max-width: 1000px) {
-  .quiz__option label {
-    font-size: 15px;
-  }
-}
 @media (max-width: 700px) {
   .quiz__option label {
     font-size: 14px;
@@ -213,11 +200,6 @@ body {
 }
 .quiz__button button:hover {
   background: #196ace;
-}
-@media (max-width: 1000px) {
-  .quiz__button button {
-    font-size: 15px;
-  }
 }
 @media (max-width: 700px) {
   .quiz__button button {

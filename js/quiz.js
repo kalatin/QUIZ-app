@@ -12,6 +12,7 @@ class Quiz {
 	};
 
 	render () {
+
 		//Если это последний вопрос
 		if(this.currentQuestion == this.survey.length){
 			//Индикатор
@@ -25,6 +26,7 @@ class Quiz {
 			//Кнопка ещё раз
 			this.button.outerHTML = `<button onclick = "location.reload()">Пройти ещё раз</button>`;
 		} 
+
 		//Если нет
 		else {
 			//Индикатор
@@ -33,7 +35,7 @@ class Quiz {
 			this.info.textContent = this.survey[this.currentQuestion].question;
 
 			//Картинка
-			this.image.src = `../image/${this.survey[this.currentQuestion].image}`;
+			this.image.src = `image/${this.survey[this.currentQuestion].image}`;
 			//Ответы
 			for (let i = 0; i < this.survey[this.currentQuestion].answers.length; i++) {
 				let option = document.createElement('div');
@@ -60,6 +62,7 @@ class Quiz {
 		}
 		
 	};
+	
 	checkQuestion () {
 		//Выбран ли ответ
 		let checkAns = this.list.querySelector('input[type="radio"]:checked');
@@ -83,4 +86,6 @@ class Quiz {
 
 let ex1 = new Quiz (survey_1);
 
-ex1.render();
+window.addEventListener('DOMContentLoaded',() => {
+	ex1.render();
+});
